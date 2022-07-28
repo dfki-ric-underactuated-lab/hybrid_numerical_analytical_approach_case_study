@@ -19,5 +19,5 @@ Maywald, Lasse & Wiebe, Felix & Kumar, Shivesh & Javadi, Mahdi & Kirchner, Frank
 <div align="center">
   <img src="docs/static/ulab.gif" style="width:200px">
   <img src="docs/static/logo.svg" style="width:200px">
-  <img src="docs/static/VeryHuman_Logo.png" style="width:180px">
+  <img src="docs/static/VeryHuman_Logo.jpg" style="width:180px">
 </div>
