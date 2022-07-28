@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Modular and Hybrid Numerical-Analytical Approach - A Case Study on Improving Computational Efficiency for Series-Parallel Hybrid Robots</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Modular and Hybrid Numerical-Analytical Approach - A
+Case Study on Improving Computational Efficiency for Series-Parallel
+Hybrid Robots</h1>
+
+
+<p class="author">
+    <a href="https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/roku02.html">
+  
+  Rohit Kumar 
+        <sup>1</sup>
+        </a>
+      <a href="https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/shku02.html">
+  
+  Shivesh Kumar 
+        <sup>1</sup>
+        </a>
+      <a href="https://www.jku.at/institut-fuer-robotik/ueber-uns/team/andreas-mueller/">
+  
+  Andreas Müller 
+        <sup>2</sup>
+        </a>
+      <a href="https://robotik.dfki-bremen.de/de/ueber-uns/mitarbeiter/frki01.html">
+  
+  Frank Kirchner 
+        <sup>1</sup>
+        </a>
+  </p>
+
+<p class="affiliation">
+
+    <a href="https://www.dfki.de/en/web">
+  
+  German Research Center for Artificial Intelligence 
+      <sup>1</sup>
+  
+    </a>
+  
+    <a href="https://www.jku.at/institut-fuer-robotik/">
+  
+  Institute of Robotics JKU 
+      <sup>2</sup>
+  
+    </a>
+  </p>
+
+</header>
+
+<div class="header_links">
+  <!-- <a href=""><i class="fa fa-github" style="font-size:36px; padding:1em;"></i></a> -->
+  <a href="https://www.researchgate.net/profile/Rohit_Kumar175/publication/362126927_Modular_and_Hybrid_Numerical-Analytical_Approach_-A_Case_Study_on_Improving_Computational_Efficiency_for_Series-Parallel_Hybrid_Robots/links/62d7d205fdad924dcbf44a0b/Modular-and-Hybrid-Numerical-Analytical-Approach-A-Case-Study-on-Improving-Computational-Efficiency-for-Series-Parallel-Hybrid-Robots.pdf"><i class="fa fa-file-pdf-o" style="font-size:36px; padding:1em;"></i></a>
+</div>
+<video src="video/project_video_final.webm" controls="controls" style="max-width: 48em;">
+</video>
+<h2 id="introduction">Introduction</h2>
+<p>The recent developments in robotics demand tackling high complexity
+in modeling rigid body systems. Series-parallel hybrid robots can be
+defined as a combination of series or tree-type chains and parallel
+mechanisms. While there are many advantages of having such hybrid
+robots, the kinematic complexities are inherited from the serial and
+parallel robots. The number of holonomic constraints increases with
+number and complexity of closed-loop mechanism. Hence, it becomes very
+important to resolve the loop closures in such hybrid robots in a
+computationally efficient and error free manner.</p>
+<h2 id="motivation">Motivation</h2>
+<p>In most of the numerical approaches, the aim is to solve the implicit
+constraints as they are fairly easy to setup at acceleration level. As
+the loop closures in the system increases, loop closure errors are
+inevitable and the approach suffers from computational inefficiency. On
+the other hand, explicit constraints are complex to setup as it requires
+the knowledge of analytical solutions to loop closure equations but
+overcomes the problem of computational inefficiency and numerical
+errors.</p>
+<p>This motivates us to combine the complementary nature of numerical
+and analytical loop closure methods to develop a hybrid
+numerical-analytical approach which exploits the modularity in the
+system design and the analytical solutions to loop closure constraints
+in commonly studied parallel mechanisms. The approach offers higher
+model fidelity and computational performance than a purely numerical
+treatment of complex series-parallel hybrid robots.</p>
+<h2 id="approach">Approach</h2>
+<p>In Fig. below, the blue column follows the derivation of implicit
+constraints via numerical approach and orange column follows the
+derivation of explicit constraints via symbolic expressions for
+resolving the loop closures. The green layer between them depicts the
+idea of deriving the explicit constraints from implicit constraints
+numerically. This modular approach gives freedom to a user to choose a
+numerical or analytical approach for a parallel submechanism module.
+Hence, if the constraints are requested to be resolved numerically, they
+are expressed in explicit form using the green layer in the figure. On
+the contrary, if analytical approach is requested by the user, symbolic
+expressions are required for that particular parallel module.</p>
+<figure>
+<img src="static/figures/hybrid-approachNew.png" width="40%" alt="fig:implicit-to-explicit">
+<figcaption>
+Fig.1 - Hybrid Approach
+</figcaption>
+</figure>
+<h2 id="example">Example</h2>
+Let us consider a reduced version of RH5 Manus robot as an example of
+series-parallel hybrid robot. In Fig. below, the hybrid system is
+represented as a serial composition of eight submechanisms, defined by
+the user. Among these, blue circled are closed loop submechanisms while
+others are serial chain subsystems. The first closed loop submechanism
+connected to the root of graph represents torso of the robot. It is a
+multi-loop mechanism of type 2S<span
+style="text-decoration:underline">P</span>U+1U actuated by two prismatic
+joints. Additionally, the elbow of robot is realized with a closed loop
+mechanism of type RR<span style="text-decoration:underline">P</span>R
+actuated with a prismatic joint. From the figure, the user can solve
+some closed loop mechanisms numerically and remaning analytically.
+Example, solving torso mechanism numerically and remaining elbow
+mechanisms using the availble symbolic expression.
+<figure>
+<img src="static/figures/rh5v2-reducedNew.png" width="50%" alt="">
+<figcaption>
+Fig.2 - RH5 Manus Upper Body
+</figcaption>
+</figure>
+<h2 id="results">Results</h2>
+<p>The computational performance is measured in CPU time. A total number
+of 10000 calls were made to solve the full system state (position,
+velocity, acceleration), inverse dynamics, and forward dynamics. The
+program is run on a standard laptop with Ubuntu 20.04 operating system
+and Intel Core i9-11950H CPU @ 2.6 GHz.</p>
+<h3 id="reduced-rh5-manus-robot-model">Reduced RH5 Manus Robot
+Model</h3>
+<p>For the reduced version of the RH5 Manus robot with 23 spanning tree
+joints (as in Fig. 2.), CPU time is noted for position, velocity,
+acceleration, and torque analysis for randomly generated trajectories.
+For computational performance, three cases are studied where</p>
+<ul>
+<li>The full system is solved through numerical approach using RBDL
+(No. of contraints = 10).</li>
+<li>The full system is solved through analytical approach using HyRoDyn
+(No. of contraints = 6).</li>
+<li>The full system is solved through proposed approach where one closed
+loop mechanism (torso mechanism in Fig. 2) is solved numerically and
+other parallel mechanisms are solved analytically.</li>
+</ul>
+<figure>
+<img src="static/figures/comparison-hybrid.png" width="40%" alt="">
+<figcaption>
+Fig. 3 - Comparison of CPU times between HyRoDyn, RBDL, and proposed
+methods for reduced RH5 Manus robot model
+</figcaption>
+</figure>
+<p>The computational performance for the numerical approach from RBDL is
+<span class="math inline">\(\approx 5\)</span> times slower than the
+analytical approach from HyRoDyn. Also, it can be noted that proposed
+numerical-analytical approach performs <span
+class="math inline">\(\approx 2\)</span> times better than the purely
+numerical approach from RBDL which shows the advantage of the proposed
+method.</p>
+<h3 id="full-upper-body-of-rh5-manus-model">Full Upper body of RH5 Manus
+Model</h3>
+<p>The computational performance is studied for the fixed-base full
+upper body of RH5 Manus robot model (61 spanning tree joints, 20
+independent joints, and 20 actuated joints) with a parallel wrist
+mechanism whose symbolic expressions are not yet available in the
+database of HyRoDyn software. Following cases are studied:</p>
+<ul>
+<li>The full system is solved through numerical approach from RBDL
+including the wrist (No. of contraints = 30).</li>
+<li>The full system is solved through proposed approach where only wrist
+is solved numerically (No. of contraints = 20).</li>
+</ul>
+<figure>
+<img src="static/figures/comparison-hybrid-wrist.png" width="40%" alt="">
+<figcaption>
+Fig. 4 - Comparison of proposed and RBDL approaches for full upper body
+of RH5 Manus robot model
+</figcaption>
+</figure>
+<p>The computational performance for the proposed numerical-analytical
+approach is <span class="math inline">\(\approx 1.3\)</span> times
+better when compared to RBDL.</p>
+<p>The complete details can be found in the <a
+href="https://www.researchgate.net/profile/Rohit_Kumar175/publication/362126927_Modular_and_Hybrid_Numerical-Analytical_Approach_-A_Case_Study_on_Improving_Computational_Efficiency_for_Series-Parallel_Hybrid_Robots/links/62d7d205fdad924dcbf44a0b/Modular-and-Hybrid-Numerical-Analytical-Approach-A-Case-Study-on-Improving-Computational-Efficiency-for-Series-Parallel-Hybrid-Robots.pdf">paper</a>.</p>
+<footer>
+  <img src="static/ulab.gif" style="width:312px">
+  <img src="static/logo.svg" style="width:312px">
+  <img src="static/VeryHuman_Logo.jpg" style="width:180px">
+</footer>
+</body>
+</html>

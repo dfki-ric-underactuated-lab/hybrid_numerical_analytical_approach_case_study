@@ -1,0 +1,197 @@
+submechanisms:
+- contextual_name: torso_joint
+  file_path: Body.urdf
+  jointnames:
+  - BodyRoot
+  - BodyPitch
+  - BodyRoll
+  - BodyBL1
+  - BodyBL2
+  - BodyActL
+  - BodyBR1
+  - BodyBR2
+  - BodyActR
+  jointnames_active:
+  - BodyActL
+  - BodyActR
+  jointnames_independent:
+  - BodyPitch
+  - BodyRoll
+  jointnames_spanningtree:
+  - BodyPitch
+  - BodyRoll
+  - BodyBL1
+  - BodyBL2
+  - BodyActL
+  - BodyBR1
+  - BodyBR2
+  - BodyActR
+  name: rh5_torso
+  type: 2SPU+1U
+#  type: "NUMERICAL"
+  loop_constraints:
+  - cut_joint: "BodyActL"
+    predecessor_body: "BodyActL_Link"
+    successor_body: "BodyRoll_Link"
+    constraint_axes: 
+    - name: "loopTX"
+      axis: [0.,0.,0.,1.,0.,0.]
+      baumgarte_stabilization_parameter: 0.01
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.01
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.01
+  - cut_joint: "BodyActR"
+    predecessor_body: "BodyActR_Link"
+    successor_body: "BodyRoll_Link"
+    constraint_axes: 
+    - name: "loopTX"
+      axis: [0.,0.,0.,1.,0.,0.]
+      baumgarte_stabilization_parameter: 0.01
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.01
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.01
+
+- contextual_name: torso_yaw_joint
+  jointnames:
+  - BodyYaw
+  - Connector_Body/Torso
+  jointnames_active:
+  - BodyYaw
+  jointnames_independent:
+  - BodyYaw
+  jointnames_spanningtree:
+  - BodyYaw
+  name: rh5_torso_yaw
+  type: R
+
+- contextual_name: left_shoulder_joint
+  jointnames:
+  - ALBase
+  - ALShoulder1
+  - ALShoulder2
+  - ALShoulder3
+  jointnames_active:
+  - ALShoulder1
+  - ALShoulder2
+  - ALShoulder3
+  jointnames_independent:
+  - ALShoulder1
+  - ALShoulder2
+  - ALShoulder3
+  jointnames_spanningtree:
+  - ALShoulder1
+  - ALShoulder2
+  - ALShoulder3
+  name: shoulder_mechanism
+  type: 3R
+
+- contextual_name: left_elbow_joint
+  file_path: ALElbow.urdf
+  jointnames:
+  - ALElbow
+  - ALElbowB11
+  - ALElbowAct
+  jointnames_active:
+  - ALElbowAct
+  jointnames_independent:
+  - ALElbow
+  jointnames_spanningtree:
+  - ALElbow
+  - ALElbowB11
+  - ALElbowAct
+  name: lambda_mechanism
+  type: rrPr
+#  type: "NUMERICAL"
+  loop_constraints:
+  - cut_joint: "ALElbowAct"
+    predecessor_body: "ALElbow_Link"
+    successor_body: "ALElbowAct_Link"
+    constraint_axes: 
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.01
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.01
+
+- contextual_name: left_wrist_roll_joint
+  jointnames:
+  - ALWristRoll
+  jointnames_active:
+  - ALWristRoll
+  jointnames_independent:
+  - ALWristRoll
+  jointnames_spanningtree:
+  - ALWristRoll
+  name: wrist_roll_mechanism
+  type: R
+
+- contextual_name: right_shoulder_joint
+  jointnames:
+  - ARBase
+  - ARShoulder1
+  - ARShoulder2
+  - ARShoulder3
+  jointnames_active:
+  - ARShoulder1
+  - ARShoulder2
+  - ARShoulder3
+  jointnames_independent:
+  - ARShoulder1
+  - ARShoulder2
+  - ARShoulder3
+  jointnames_spanningtree:
+  - ARShoulder1
+  - ARShoulder2
+  - ARShoulder3
+  name: shoulder_mechanism
+  type: 3R
+
+- contextual_name: right_elbow_joint
+  file_path: ARElbow.urdf
+  jointnames:
+  - ARElbow
+  - ARElbowB11
+  - ARElbowAct
+  jointnames_active:
+  - ARElbowAct
+  jointnames_independent:
+  - ARElbow
+  jointnames_spanningtree:
+  - ARElbow
+  - ARElbowB11
+  - ARElbowAct
+  name: lambda_mechanism
+  type: rrPr
+#  type: "NUMERICAL"
+  loop_constraints:
+  - cut_joint: "ARElbowAct"
+    predecessor_body: "ARElbow_Link"
+    successor_body: "ARElbowAct_Link"
+    constraint_axes: 
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.01
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.01
+
+- contextual_name: right_wrist_roll_joint
+  jointnames:
+  - ARWristRoll
+  jointnames_active:
+  - ARWristRoll
+  jointnames_independent:
+  - ARWristRoll
+  jointnames_spanningtree:
+  - ARWristRoll
+  name: wrist_roll_mechanism
+  type: R
+
+

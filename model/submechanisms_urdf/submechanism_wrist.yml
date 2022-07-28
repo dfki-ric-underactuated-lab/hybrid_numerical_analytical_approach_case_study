@@ -1,0 +1,94 @@
+submechanisms:
+- contextual_name: left_wrist_joint
+  file_path: left_wrist_mechanism.urdf
+  jointnames:
+  - ALWristPitch
+  - ALWristYaw
+  - ALWristBL4
+  - ALWristBL3
+  - ALWristBL0
+  - ALWristBL2
+  - ALWristBR4
+  - ALWristBR3
+  - ALWristBR0
+  - ALWristBR2
+  - ALWristAL1
+  - ALWristActL
+  - ALWristAR1
+  - ALWristActR
+  - ALWristBL1
+  - ALWristBR1
+  jointnames_active:
+  - ALWristActL
+  - ALWristActR
+  jointnames_independent:
+  - ALWristPitch
+  - ALWristYaw
+  jointnames_spanningtree:
+  - ALWristPitch
+  - ALWristYaw
+  - ALWristBL4
+  - ALWristBL3
+  - ALWristBL0
+  - ALWristBL2 #cut joint frame
+  - ALWristBR4
+  - ALWristBR3
+  - ALWristBR0
+  - ALWristBR2 #cut joint frame
+  - ALWristAL1
+  - ALWristActL #cut joint frame
+  - ALWristAR1
+  - ALWristActR #cut joint frame
+  - ALWristBL1
+  - ALWristBR1
+  name: rh5v2_wrist
+#  type: 2SURRPR+1U
+  type: "NUMERICAL"
+  loop_constraints:
+  - cut_joint: "ALWristBL2"
+    predecessor_body: "ALWristBL2_Link"
+    successor_body: "ALWristBL1_Link"
+    constraint_axes: 
+    - name: "loopTX"
+      axis: [0.,0.,0.,1.,0.,0.]
+      baumgarte_stabilization_parameter: 0.02
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.02
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.02
+  - cut_joint: "ALWristBR2"
+    predecessor_body: "ALWristBR2_Link"
+    successor_body: "ALWristBR1_Link"
+    constraint_axes: 
+    - name: "loopTX"
+      axis: [0.,0.,0.,1.,0.,0.]
+      baumgarte_stabilization_parameter: 0.02
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.02
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.02
+  - cut_joint: "ALWristActL"
+    predecessor_body: "ALWristActL_Link"
+    successor_body: "ALWristBL1_Link"
+    constraint_axes: 
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.02
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.02
+  - cut_joint: "ALWristActR"
+    predecessor_body: "ALWristActR_Link"
+    successor_body: "ALWristBR1_Link"
+    constraint_axes: 
+    - name: "loopTY"
+      axis: [0.,0.,0.,0.,1.,0.]
+      baumgarte_stabilization_parameter: 0.02
+    - name: "loopTZ"
+      axis: [0.,0.,0.,0.,0.,1.]
+      baumgarte_stabilization_parameter: 0.02
+

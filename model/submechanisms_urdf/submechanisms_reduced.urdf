@@ -1,0 +1,802 @@
+<robot name="RH5v2_reduced">
+  <joint name="ALBase" type="fixed">
+    <origin xyz="0.29809 0.12609 0.025162" rpy="1.508093 0.25436 1.3265"/>
+    <parent link="Connector_Body/Torso_Link"/>
+    <child link="ALBase_Link"/>
+  </joint>
+  <link name="ALBase_Link">
+    <inertial>
+      <origin xyz="0.0079897 -7.1316e-07 0.00019625" rpy="0.0 0.0 0.0"/>
+      <mass value="1.1943"/>
+      <inertia ixx="0.00089755" ixy="1.4484e-08" ixz="-2.6127e-07" iyy="0.00057565" iyz="-7.8027e-07" izz="0.00056347"/>
+    </inertial>
+    <visual name="ALBase_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALBase_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ALBase_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALBase_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ALElbow" type="revolute">
+    <origin xyz="0.0 0.001 0.3511" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ALShoulder3_Link"/>
+    <child link="ALElbow_Link"/>
+    <limit effort="400.0" lower="-1.8" upper="0.0" velocity="3.1415926"/>
+  </joint>
+  <joint name="ALElbowAct" type="prismatic">
+    <origin xyz="0.0 0.0 0.29542" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="ALElbowB11_Link"/>
+    <child link="ALElbowAct_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="ALElbowAct_Link">
+    <inertial>
+      <origin xyz="-6.1594e-06 1.459e-10 -0.085859" rpy="0.0 0.0 0.0"/>
+      <mass value="0.054652"/>
+      <inertia ixx="0.00010606969013629223" ixy="3.492500000065374e-13" ixz="3.6185000000071752e-09" iyy="0.00010597469013629217" iyz="-4.3476005705310174e-14" izz="1.0000000136292127e-05"/>
+    </inertial>
+    <visual name="ALElbowAct_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALElbow_Act_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ALElbowAct_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALElbow_Act_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ALElbowB11" type="revolute">
+    <origin xyz="0.0 -0.029 0.1391" rpy="-0.25319 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ALShoulder3_Link"/>
+    <child link="ALElbowB11_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="ALElbowB11_Link">
+    <inertial>
+      <origin xyz="2.5944e-05 1.8924e-05 0.10704" rpy="0.0 0.0 0.0"/>
+      <mass value="0.32696"/>
+      <inertia ixx="0.00011102" ixy="-1.0985e-08" ixz="-6.6288e-08" iyy="0.00011251" iyz="1.4067e-07" izz="7.0733e-05"/>
+    </inertial>
+    <visual name="ALElbowB11_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALElbow_B11_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ALElbowB11_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALElbow_B11_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="ALElbow_Link">
+    <inertial>
+      <origin xyz="-7.016e-05 0.001127 0.080286" rpy="0.0 0.0 0.0"/>
+      <mass value="0.63578"/>
+      <inertia ixx="0.00050999" ixy="2.2297e-07" ixz="4.047e-07" iyy="0.00051633" iyz="-4.4233e-05" izz="0.00046537"/>
+    </inertial>
+    <visual name="ALElbow_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALElbow_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ALElbow_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALElbow_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ALShoulder1" type="revolute">
+    <origin xyz="0.1076 0.0 0.0" rpy="3.1416 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ALBase_Link"/>
+    <child link="ALShoulder1_Link"/>
+    <limit effort="400.0" lower="-3.002" upper="3.002" velocity="3.1415926"/>
+  </joint>
+  <link name="ALShoulder1_Link">
+    <inertial>
+      <origin xyz="-0.0091569 0.0036464 -0.00016872" rpy="0.0 0.0 0.0"/>
+      <mass value="1.602"/>
+      <inertia ixx="0.0012117" ixy="-8.0704e-05" ixz="-3.528e-06" iyy="0.0015561" iyz="-2.6511e-06" izz="0.0010024"/>
+    </inertial>
+    <visual name="ALShoulder1_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALShoulder1_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ALShoulder1_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALShoulder1_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ALShoulder2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="ALShoulder1_Link"/>
+    <child link="ALShoulder2_Link"/>
+    <limit effort="400.0" lower="-0.243" upper="1.84" velocity="3.1415926"/>
+  </joint>
+  <link name="ALShoulder2_Link">
+    <inertial>
+      <origin xyz="0.010763 0.020477 0.0278" rpy="0.0 0.0 0.0"/>
+      <mass value="0.50849"/>
+      <inertia ixx="0.0010465" ixy="0.00012061" ixz="5.4855e-05" iyy="0.00092568" iyz="0.00027501" izz="0.0010393"/>
+    </inertial>
+    <visual name="ALShoulder2_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALShoulder2_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ALShoulder2_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALShoulder2_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ALShoulder3" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5707"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="ALShoulder2_Link"/>
+    <child link="ALShoulder3_Link"/>
+    <limit effort="400.0" lower="-3.002" upper="3.002" velocity="3.1415926"/>
+  </joint>
+  <link name="ALShoulder3_Link">
+    <inertial>
+      <origin xyz="-3.2703e-05 0.0033688 0.14648" rpy="0.0 0.0 0.0"/>
+      <mass value="0.85234"/>
+      <inertia ixx="0.0028013" ixy="5.1939e-07" ixz="-7.2591e-07" iyy="0.0027401" iyz="5.4672e-05" izz="0.00078629"/>
+    </inertial>
+    <visual name="ALShoulder3_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALShoulder3_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ALShoulder3_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ALShoulder3_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="ALWristRoll" type="revolute">
+    <origin xyz="0.0 0.0 0.122" rpy="3.1416 -1.5708 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ALElbow_Link"/>
+    <child link="ALWristRoll_Link"/>
+    <limit effort="400.0" lower="-3.002" upper="3.002" velocity="3.1415926"/>
+  </joint>
+  <link name="ALWristRoll_Link">
+    <inertial>
+      <origin xyz="-1.6653e-16 -1.9082e-17 -1.3878e-17" rpy="0.0 0.0 0.0"/>
+      <mass value="2e-05"/>
+      <inertia ixx="2.0000000000000005e-05" ixy="3.3881317890172014e-21" ixz="0.0" iyy="2.0000000000000005e-05" iyz="0.0" izz="2.0000000000000005e-05"/>
+    </inertial>
+  </link>
+  
+  <joint name="ARBase" type="fixed">
+    <origin xyz="0.29809 -0.12609 0.025162" rpy="-1.508093 0.25436 -1.3265"/>
+    <parent link="Connector_Body/Torso_Link"/>
+    <child link="ARBase_Link"/>
+  </joint>
+  <link name="ARBase_Link">
+    <inertial>
+      <origin xyz="0.00799 1e-06 0.000196" rpy="0.0 0.0 0.0"/>
+      <mass value="1.194300000000001"/>
+      <inertia ixx="0.00089755" ixy="-1.4484e-08" ixz="-2.6127e-07" iyy="0.00057565" iyz="7.8027e-07" izz="0.00056347"/>
+    </inertial>
+    <visual name="ARBase_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="3.141593 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARBase_Link.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ARBase_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARBase_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ARElbow" type="revolute">
+    <origin xyz="0.0 0.001 -0.3511" rpy="-3.141592 0.0 -3.141592"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ARShoulder3_Link"/>
+    <child link="ARElbow_Link"/>
+    <limit effort="400.0" lower="-1.8" upper="0.0" velocity="3.1415926"/>
+  </joint>
+  <joint name="ARElbowAct" type="prismatic">
+    <origin xyz="0.0 0.0 0.29542" rpy="0.0 0.0 -3.141592"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="ARElbowB11_Link"/>
+    <child link="ARElbowAct_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="ARElbowAct_Link">
+    <inertial>
+      <origin xyz="-6e-06 0.0 -0.085859" rpy="0.0 0.0 0.0"/>
+      <mass value="0.05465199999999999"/>
+      <inertia ixx="0.00010606969013566325" ixy="-3.794811884488628e-13" ixz="3.6268360281805788e-09" iyy="0.0001059746901362923" iyz="4.232588795943544e-14" izz="1.0000000136920807e-05"/>
+    </inertial>
+    <visual name="ARElbowAct_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARElbow_Act_Link.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ARElbowAct_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARElbow_Act_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ARElbowB11" type="revolute">
+    <origin xyz="0.0 -0.029 -0.1391" rpy="2.888403 0.0 -3.141592"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ARShoulder3_Link"/>
+    <child link="ARElbowB11_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="ARElbowB11_Link">
+    <inertial>
+      <origin xyz="-2.6e-05 1.9e-05 0.10704" rpy="0.0 0.0 0.0"/>
+      <mass value="0.32695999999999986"/>
+      <inertia ixx="0.00011101999998112811" ixy="1.0984488097443103e-08" ixz="6.629144855259e-08" iyy="0.00011251000000736784" iyz="1.406700231845442e-07" izz="7.073300001150397e-05"/>
+    </inertial>
+    <visual name="ARElbowB11_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARElbow_B11_Link.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ARElbowB11_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARElbow_B11_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="ARElbow_Link">
+    <inertial>
+      <origin xyz="7e-05 0.001127 0.080286" rpy="0.0 0.0 0.0"/>
+      <mass value="0.6357799999999997"/>
+      <inertia ixx="0.0005099900001544764" ixy="-2.2297207206594354e-07" ixz="-4.0468474586715554e-07" iyy="0.0005163300270204655" iyz="-4.423298448630883e-05" izz="0.00046536997282505774"/>
+    </inertial>
+    <visual name="ARElbow_Link_Visual">
+      <origin xyz="0.0 -0.0 0.0" rpy="0.0 0.0 3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARElbow_Link.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ARElbow_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARElbow_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ARShoulder1" type="revolute">
+    <origin xyz="0.1076 0.0 0.0" rpy="-3.141585 0.0 3.141593"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ARBase_Link"/>
+    <child link="ARShoulder1_Link"/>
+    <limit effort="400.0" lower="-3.002" upper="3.002" velocity="3.1415926"/>
+  </joint>
+  <link name="ARShoulder1_Link">
+    <inertial>
+      <origin xyz="0.009157 0.003646 -0.000169" rpy="0.0 0.0 0.0"/>
+      <mass value="1.6019999999999996"/>
+      <inertia ixx="0.0012116999440866811" ixy="8.070387961256474e-05" ixz="3.5280257083975037e-06" iyy="0.001556100057542011" iyz="-2.650928692723903e-06" izz="0.0010023999983713062"/>
+    </inertial>
+    <visual name="ARShoulder1_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARShoulder1_Link.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ARShoulder1_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARShoulder1_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ARShoulder2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141592"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="ARShoulder1_Link"/>
+    <child link="ARShoulder2_Link"/>
+    <limit effort="400.0" lower="-0.243" upper="1.84" velocity="3.1415926"/>
+  </joint>
+  <link name="ARShoulder2_Link">
+    <inertial>
+      <origin xyz="0.010763 -0.020477 0.0278" rpy="0.0 0.0 0.0"/>
+      <mass value="0.5084917431461261"/>
+      <inertia ixx="0.0010464999259024192" ixy="-0.00012061005396444852" ixz="5.485487847357631e-05" iyy="0.0009256802430528081" iyz="-0.0002750100517516733" izz="0.0010392998310447714"/>
+    </inertial>
+    <visual name="ARShoulder2_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARShoulder2_Link.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ARShoulder2_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARShoulder2_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ARShoulder3" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="-3.141593 1e-06 -1.5707"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="ARShoulder2_Link"/>
+    <child link="ARShoulder3_Link"/>
+    <limit effort="400.0" lower="-3.002" upper="3.002" velocity="3.1415926"/>
+  </joint>
+  <link name="ARShoulder3_Link">
+    <inertial>
+      <origin xyz="-3.3e-05 0.003369 -0.14648" rpy="0.0 0.0 0.0"/>
+      <mass value="0.8525751706215601"/>
+      <inertia ixx="0.0028013000003190894" ixy="5.193714519100651e-07" ixz="7.258930202151745e-07" iyy="0.002740099961802801" iyz="-5.467267704269619e-05" izz="0.000786290037878108"/>
+    </inertial>
+    <visual name="ARShoulder3_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="3.141593 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARShoulder3_Link.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1.0"/>
+      </material>
+    </visual>
+    <collision name="ARShoulder3_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/ARShoulder3_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="ARWristRoll" type="revolute">
+    <origin xyz="0.0 0.0 0.122" rpy="0.08344 1.570793 -3.058159"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="ARElbow_Link"/>
+    <child link="ARWristRoll_Link"/>
+    <limit effort="400.0" lower="-3.002" upper="3.002" velocity="3.1415926"/>
+  </joint>
+  <link name="ARWristRoll_Link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="2e-05"/>
+      <inertia ixx="2.0000000000000005e-05" ixy="1.6461063629699659e-22" ixz="1.778282480377345e-23" iyy="2.0000000000000005e-05" iyz="-8.470324889451552e-22" izz="2e-05"/>
+    </inertial>
+  </link>
+  
+  <joint name="BodyActL" type="prismatic">
+    <origin xyz="0.0 0.0 0.23999" rpy="0.0 0.0 -0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="BodyBL2_Link"/>
+    <child link="BodyActL_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyActL_Link">
+    <inertial>
+      <origin xyz="0.0 0.0 -0.077362" rpy="0.0 0.0 0.0"/>
+      <mass value="0.10190000000000002"/>
+      <inertia ixx="0.00013708249997353297" ixy="3.8201993071794706e-08" ixz="1.1083966073276513e-22" iyy="0.00013710250002646712" iyz="9.793800383959562e-22" izz="1.0000000000000003e-05"/>
+    </inertial>
+    <visual name="BodyActL_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_ActL.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.69804 0.69804 0.69804 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyActL_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_ActL_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyActR" type="prismatic">
+    <origin xyz="0.0 0.0 0.23999" rpy="0.0 0.0 -0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="BodyBR2_Link"/>
+    <child link="BodyActR_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyActR_Link">
+    <inertial>
+      <origin xyz="0.0 0.0 -0.077362" rpy="0.0 0.0 0.0"/>
+      <mass value="0.10190000000000002"/>
+      <inertia ixx="0.00013708250002646719" ixy="-3.820200692820298e-08" ixz="2.0798008804014167e-17" iyy="0.00013710249997353285" iyz="-2.5414992795339697e-17" izz="1.0000000000000003e-05"/>
+    </inertial>
+    <visual name="BodyActR_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_ActR.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.69804 0.69804 0.69804 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyActR_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_ActR_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyBL1" type="revolute">
+    <origin xyz="0.02 -0.089827 0.21" rpy="2.899823 0.0 1.5708"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="BodyRoot_Link"/>
+    <child link="BodyBL1_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyBL1_Link">
+    <inertial>
+      <origin xyz="0.020399 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.042423"/>
+      <inertia ixx="1.0000000000001026e-05" ixy="-2.9574078259175723e-12" ixz="-6.764500061230576e-20" iyy="1.8537299999998983e-05" iyz="1.767562644587376e-21" izz="2.0306299999999996e-05"/>
+    </inertial>
+    <visual name="BodyBL1_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BL1.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.64706 0.61961 0.58824 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyBL1_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BL1_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyBL2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.010339 -0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="BodyBL1_Link"/>
+    <child link="BodyBL2_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyBL2_Link">
+    <inertial>
+      <origin xyz="-5.3e-05 1.1e-05 0.12216" rpy="0.0 0.0 0.0"/>
+      <mass value="0.8166400000000001"/>
+      <inertia ixx="0.0004187999999241573" ixy="1.0946911318984479e-07" ixz="4.637099902145767e-07" iyy="0.00042136000007584283" iyz="2.8248160633875217e-08" izz="0.00051891"/>
+    </inertial>
+    <visual name="BodyBL2_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BL2.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.61961 0.40784 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyBL2_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BL2_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyBR1" type="revolute">
+    <origin xyz="-0.02 -0.089827 0.21" rpy="-2.899823 0.0 1.5708"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="BodyRoot_Link"/>
+    <child link="BodyBR1_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyBR1_Link">
+    <inertial>
+      <origin xyz="0.020399 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.042423"/>
+      <inertia ixx="1.0000000000001026e-05" ixy="-2.9574078244755723e-12" ixz="-6.968000025102942e-20" iyy="1.8537299999998983e-05" iyz="7.246474869280696e-22" izz="2.0306299999999996e-05"/>
+    </inertial>
+    <visual name="BodyBR1_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BR1.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.64706 0.61961 0.58824 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyBR1_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BR1_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyBR2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.010339 -0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="BodyBR1_Link"/>
+    <child link="BodyBR2_Link"/>
+    <limit effort="400.0" lower="-1.57" upper="1.57" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyBR2_Link">
+    <inertial>
+      <origin xyz="-6.2e-05 -1.2e-05 0.12216" rpy="0.0 0.0 0.0"/>
+      <mass value="0.8166400000000001"/>
+      <inertia ixx="0.00041874999995572364" ixy="6.390708201293713e-08" ixz="4.4057001108232887e-07" iyy="0.0004214000000442765" iyz="-3.199184738205335e-08" izz="0.00051891"/>
+    </inertial>
+    <visual name="BodyBR2_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BR2.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.64706 0.61961 0.58824 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyBR2_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_BR2_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyPitch" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="3.141593 0.0 1.570797"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="BodyRoot_Link"/>
+    <child link="BodyPitch_Link"/>
+    <limit effort="400.0" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyPitch_Link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.076413"/>
+      <inertia ixx="1.3771000000001387e-05" ixy="2.1212999999995475e-12" ixz="2.1080999098829268e-12" iyy="1.3770999999998615e-05" iyz="-2.7576068891630696e-13" izz="2.4637e-05"/>
+    </inertial>
+    <visual name="BodyPitch_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.570796"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/BodyPitch.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyPitch_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/BodyPitch_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyRoll" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="BodyPitch_Link"/>
+    <child link="BodyRoll_Link"/>
+    <limit effort="400.0" lower="-0.4363323129985824" upper="0.4363323129985824" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyRoll_Link">
+    <inertial>
+      <origin xyz="-0.009734 1.6e-05 0.052947" rpy="0.0 0.0 0.0"/>
+      <mass value="1.4553"/>
+      <inertia ixx="0.001065799999518147" ixy="-7.372513070271073e-07" ixz="-6.32019993920274e-06" iyy="0.001000600000481853" iyz="1.8604206540909618e-07" izz="0.0017602"/>
+    </inertial>
+    <visual name="BodyRoll_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.570796"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/BodyRoll.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyRoll_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/BodyRoll_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyRoot" type="fixed">
+    <origin xyz="0.0 0.0 0.016" rpy="3.141593 0.0 1.570793"/>
+    <parent link="RH5v2_Root_Link"/>
+    <child link="BodyRoot_Link"/>
+  </joint>
+  <link name="BodyRoot_Link">
+    <inertial>
+      <origin xyz="0.001001 0.011445 0.027995" rpy="0.0 0.0 0.0"/>
+      <mass value="0.1819"/>
+      <inertia ixx="0.00016560999999982624" ixy="2.4259007707886505e-10" ixz="1.6758933595730266e-08" iyy="0.00021346000013282973" iyz="1.9149442598622602e-07" izz="0.0003416899998673442"/>
+    </inertial>
+    <visual name="BodyRoot_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="3.141593 0.0 3.141593"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_Root_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyRoot_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Body_Root_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="BodyYaw" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="BodyRoll_Link"/>
+    <child link="BodyYaw_Link"/>
+    <limit effort="400.0" lower="-3.002" upper="3.002" velocity="3.1415926"/>
+  </joint>
+  <link name="BodyYaw_Link">
+    <inertial>
+      <origin xyz="5e-06 0.0 0.062225" rpy="0.0 0.0 0.0"/>
+      <mass value="0.25617"/>
+      <inertia ixx="0.00046732" ixy="-1.6340031834935254e-14" ixz="-2.1180999999998868e-08" iyy="0.00046727000000000004" iyz="6.921897699980597e-15" izz="0.00077487"/>
+    </inertial>
+    <visual name="BodyYaw_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.570796"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/BodyYaw.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1.0"/>
+      </material>
+    </visual>
+    <collision name="BodyYaw_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/BodyYaw_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+ 
+  <joint name="Connector_Body/Torso" type="fixed">
+    <origin xyz="0.0 0.0 0.0525" rpy="-1.570793 -1.570793 1.570796"/>
+    <parent link="BodyYaw_Link"/>
+    <child link="Connector_Body/Torso_Link"/>
+  </joint>
+  <link name="Connector_Body/Torso_Link">
+    <inertial>
+      <origin xyz="0.0 -4.7606e-18 6.1827e-22" rpy="0.0 0.0 0.0"/>
+      <mass value="9.057619513349467"/>
+      <inertia ixx="0.13521096197328605" ixy="0.00020463773988279492" ixz="-0.005225465392652974" iyy="0.1581524298837754" iyz="-4.4239158097541136e-05" izz="0.22422604262450974"/>
+    </inertial>
+    <visual name="base_link_torso_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="3.141593 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/base_link_torso.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1.0"/>
+      </material>
+    </visual>
+    <visual name="Connector_Torso/Head_Visual">
+      <origin xyz="0.3485 0.0 0.0" rpy="-3.141592 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Connector_Torso_Head.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.69804 0.69804 0.69804 1.0"/>
+      </material>
+    </visual>
+    <visual name="Connector_Torso/ArmRight_Visual">
+      <origin xyz="0.29809 -0.12609 0.025162" rpy="-1.508093 0.25436 -1.3265"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Connector_Torso_ArmRight.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.69804 0.69804 0.69804 1.0"/>
+      </material>
+    </visual>
+    <visual name="Connector_Torso/ArmLeft_Visual">
+      <origin xyz="0.29809 0.12609 0.025162" rpy="1.508093 0.25436 1.3265"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Connector_Torso_ArmLeft.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.69804 0.69804 0.69804 1.0"/>
+      </material>
+    </visual>
+    <collision name="Connector_Body/Torso_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/Connector_BodyTorso_Link_simplified-full-urdf_joined_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="RH5v2_Root_Link">
+    <inertial>
+      <origin xyz="0.004352 -2.1674e-05 -0.079131" rpy="0.0 0.0 0.0"/>
+      <mass value="1.7255"/>
+      <inertia ixx="0.016198" ixy="-6.064e-07" ixz="-0.0013383" iyy="0.010542" iyz="-5.0064e-07" izz="0.016367"/>
+    </inertial>
+    <visual name="RH5v2_Root_Link_Visual">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/RH5v2_Root_Link.stl"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.89804 0.91765 0.92941 1.0"/>
+      </material>
+    </visual>
+    <collision name="RH5v2_Root_Link_Collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="../meshes/lfs-stl/RH5v2_Root_Link_convexhull.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
