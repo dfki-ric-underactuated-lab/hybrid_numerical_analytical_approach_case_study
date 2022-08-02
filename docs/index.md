@@ -1,6 +1,7 @@
 ---
 title: "Modular and Hybrid Numerical-Analytical Approach - A Case Study on Improving Computational Efficiency for Series-Parallel Hybrid Robots"
 
+github: https://github.com/dfki-ric-underactuated-lab/hybrid_numerical_analytical_approach_case_study
 pdf: https://www.researchgate.net/profile/Rohit_Kumar175/publication/362126927_Modular_and_Hybrid_Numerical-Analytical_Approach_-A_Case_Study_on_Improving_Computational_Efficiency_for_Series-Parallel_Hybrid_Robots/links/62d7d205fdad924dcbf44a0b/Modular-and-Hybrid-Numerical-Analytical-Approach-A-Case-Study-on-Improving-Computational-Efficiency-for-Series-Parallel-Hybrid-Robots.pdf
 
 authors:

@@ -7,7 +7,7 @@
 - manually deploy `index.html` and `static` folder (e.g. to gh pages) or run `python3 -m http.server` for previewing the site locally.
 
 ## notes on using gh pages
-- put `index.html` and `static` inside a `doc` foler at the root of your repository.
+- put `index.html` and `static` inside a `docs` foler at the root of your repository.
 - pages settings can be found under settings -> pages. make sure to select the right branch and folder.
 - more info here: https://pages.github.com/ 
 
