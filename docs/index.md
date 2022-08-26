@@ -49,8 +49,8 @@ The computational performance is measured in CPU time. A total number of 10000 c
 For the reduced version of the RH5 Manus robot with 23 spanning tree joints (as in Fig. 2.), CPU time is noted for position, velocity, acceleration, and torque analysis for randomly generated trajectories. For computational performance, three cases are studied where
 
 * The full system is solved through numerical approach using RBDL (No. of contraints = 10).
-* The full system is solved through analytical approach using HyRoDyn (No. of contraints = 6).
-* The full system is solved through proposed approach where one closed loop mechanism (torso mechanism in Fig. 2) is solved numerically and other parallel mechanisms are solved analytically.
+* The full system is solved through analytical approach using HyRoDyn.
+* The full system is solved through proposed approach where one closed loop mechanism (torso mechanism in Fig. 2) is solved numerically and other parallel mechanisms are solved analytically. (No. of contraints = 6)
 
 <figure>
   <img src="static/figures/comparison-hybrid.png" width="40%" alt="">
