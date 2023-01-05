@@ -6,15 +6,17 @@ The urdf and meshes of the robot can be found in [model](model) folder.
 
 ### Citation
 
-Kumar, Rohit & Kumar, Shivesh & Müller, Andreas & Kirchner, Frank. (2022). CModular and Hybrid Numerical-Analytical Approach - A Case Study on Improving Computational Efficiency for Series-Parallel Hybrid Robots. 10.13140/RG.2.2.10431.38565.
+R. Kumar, S. Kumar, A. Müller and F. Kirchner, "Modular and Hybrid Numerical-Analytical Approach - A Case Study on Improving Computational Efficiency for Series-Parallel Hybrid Robots," 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2022, pp. 3476-3483, doi: 10.1109/IROS47612.2022.9981474.
 
-    @misc{kumar2022Hybrid,
-    author = {Kumar, Rohit and  Kumar, Shivesh and Müller, Andreas and Kirchner, Frank},
-    year = {2022},
-    month = {07},
-    pages = {},
-    title = {Modular and Hybrid Numerical-Analytical Approach - A Case Study on Improving Computational Efficiency for Series-Parallel Hybrid Robots},
-    doi = {10.13140/RG.2.2.10431.38565}
+    @INPROCEEDINGS{9981474,  
+    author={Kumar, Rohit and Kumar, Shivesh and Müller, Andreas and Kirchner, Frank},  
+    booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},   
+    title={Modular and Hybrid Numerical-Analytical Approach - A Case Study on Improving Computational Efficiency for Series-Parallel Hybrid Robots},   
+    year={2022},  
+    volume={},  
+    number={},  
+    pages={3476-3483},  
+    doi={10.1109/IROS47612.2022.9981474}
     }
 
 </div>
